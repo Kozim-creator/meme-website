@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090911">
+  <title>MemeZone RU — Мир русских мемов</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">
+      <span class="logo-icon">😂</span>
+      Meme<span>Zone</span><small>RU</small>
+    </a>
+
+    <div class="search">
+      <span>⌕</span>
+      <input id="searchInput" placeholder="Найти мем..." autocomplete="off">
+      <kbd>Поиск</kbd>
+    </div>
+
+    <button class="mobile-menu" id="menuBtn">☰</button>
+    <button class="login-btn" id="profileBtn">👤 Профиль</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <p class="side-title">МЕНЮ</p>
+      <button class="nav-item active" data-view="all">🏠 Главная</button>
+      <button class="nav-item" data-view="popular">🔥 Популярное</button>
+      <button class="nav-item" data-view="new">✨ Новые</button>
+      <button class="nav-item" data-view="random">🎲 Случайные</button>
+      <button class="nav-item" data-view="favorites">💜 Избранное</button>
+
+      <p class="side-title">КАТЕГОРИИ</p>
+      <button class="nav-item category" data-category="Школа">🎒 Школа</button>
+      <button class="nav-item category" data-category="Жизнь">😂 Жизнь</button>
+      <button class="nav-item category" data-category="Игры">🎮 Игры</button>
+      <button class="nav-item category" data-category="Коты">🐱 Коты</button>
+      <button class="nav-item category" data-category="Друзья">🤝 Друзья</button>
+      <button class="nav-item category" data-category="Родители">👨‍👩‍👦 Родители</button>
+      <button class="nav-item category" data-category="Отношения">❤️ Отношения</button>
+      <button class="nav-item category" data-category="Работа">💻 Работа</button>
+      <button class="nav-item category" data-category="Еда">🍕 Еда</button>
+      <button class="nav-item category" data-category="Животные">🐶 Животные</button>
+      <button class="nav-item category" data-category="Технологии">📱 Технологии</button>
+
+      <div class="sidebar-card">
+        <span>👑</span>
+        <h3>Мем дня</h3>
+        <p>Когда сказал «ещё пять минут» и проспал три часа.</p>
+        <div class="mini-emoji">😴</div>
+      </div>
+
+      <p class="side-footer">MemeZone RU © 2026</p>
+    </aside>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero-content">
+          <div class="eyebrow">😂 ТВОЯ ЕЖЕДНЕВНАЯ ДОЗА СМЕХА</div>
+          <h1>Русские мемы.<br><span>Настроение лучше.</span></h1>
+          <p>Школа, друзья, жизненные ситуации и мемы,
+             которые понимают все.</p>
+          <button class="primary-btn" id="heroBtn">
+            Смотреть мемы <span>→</span>
+          </button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="hero-face">😎</div>
+          <span class="float-emoji e1">💀</span>
+          <span class="float-emoji e2">🤣</span>
+          <span class="float-emoji e3">🔥</span>
+        </div>
+      </section>
+
+      <div class="section-heading">
+        <div>
+          <h2 id="sectionTitle">Все мемы</h2>
+          <p id="resultCount">Большая коллекция русского юмора</p>
+        </div>
+        <select id="sortSelect" aria-label="Сортировка мемов">
+          <option value="popular">🔥 По популярности</option>
+          <option value="new">✨ Сначала новые</option>
+          <option value="random">🎲 Случайный порядок</option>
+        </select>
+      </div>
+
+      <div class="chips" id="chips">
+        <button class="chip selected" data-category="Все">Все</button>
+        <button class="chip" data-category="Школа">🎒 Школа</button>
+        <button class="chip" data-category="Жизнь">😂 Жизнь</button>
+        <button class="chip" data-category="Игры">🎮 Игры</button>
+        <button class="chip" data-category="Коты">🐱 Коты</button>
+        <button class="chip" data-category="Друзья">🤝 Друзья</button>
+        <button class="chip" data-category="Родители">👨‍👩‍👦 Родители</button>
+        <button class="chip" data-category="Еда">🍕 Еда</button>
+        <button class="chip" data-category="Животные">🐶 Животные</button>
+      </div>
+
+      <div class="meme-grid" id="memeGrid"></div>
+
+      <div class="empty-state hidden" id="emptyState">
+        <div>🫠</div>
+        <h2>Мемы не найдены</h2>
+        <p>Попробуй другое слово или категорию.</p>
+        <button class="primary-btn" id="resetBtn">Показать все мемы</button>
+      </div>
+
+      <div class="load-area">
+        <button class="load-btn" id="loadMore">Показать ещё мемы ↓</button>
+        <p>Смех продлевает жизнь. Наверное. 😂</p>
+      </div>
+
+      <footer class="footer">
+        <a class="logo" href="#">😂 Meme<span>Zone</span> RU</a>
+        <p>Сделано ради хорошего настроения 💜</p>
+        <button id="toTop">↑ Наверх</button>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
